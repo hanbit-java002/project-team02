@@ -1,0 +1,37 @@
+{{set root='.'}}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>한빛 팬션</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" href="{{root}}/apple-touch-icon.png">
+	<link rel="stylesheet" href="{{root}}/plugins/normalize/normalize.css">
+	<link rel="stylesheet" href="{{root}}/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{root}}/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{root}}/css/write-reviews.css">
+	<script src="{{root}}/plugins/modernizr/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<div class="hp-container">
+	<div class="title-row-review">
+		<div class="back-history-review">
+			<i class="fa fa-angle-left"></i>
+		</div>
+		<div class="pension-title-review">
+			<h2>이용후기 작성</h2>
+		</div>
+	</div>
+	<div class="question-of-review">
+		<h3>즐거운 여행 되셨나요? 이용후기를 작성해 주세요.</h3>
+	</div>
+	<div class="okay-or-not">
+		<input type="button" value="등록" class="okay" style="width: 45%; background-color: #545555; color: white; height: 60px; border-radius: 10px; font-size: 1.6em; margin-right: 5px">
+		<input type="button" value="취소" class="non-okay" style="width: 45%; background-color: #e3e3e3; color: black; height: 60px; border-radius: 10px; font-size: 1.6em; margin-left: 5px">
+	</div>
+{{> footer jsName='write-reviews'}}
