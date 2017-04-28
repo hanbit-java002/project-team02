@@ -1,0 +1,146 @@
+@import 'lib/include.all.less';
+@import 'common.css';
+
+.hp-container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.title-row{
+	width: 100%;
+	position: fixed;
+	background-color: white;
+	height: 50px;
+	z-index: 3;
+}
+.back-history{
+	width: 13%;
+}
+.pension-title{
+	white-space: nowrap;
+	width: 70%;
+	font-size: 18px;
+	text-overflow: ellipsis;
+}
+.like-share{
+	width: 16.9%;
+}
+.title-row>div{
+	display: inline-block;
+	padding: 15px 0;
+	text-align: center;
+}
+.pension-img{
+	width: 100%;
+	position: relative;
+	background-image: url("../img/pension-img.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+	height: 400px;
+}
+.info-tabs{
+	width: 100%;
+	position: relative;
+}
+.info-tabs>li{
+	display: inline-block;
+	width: 25%;
+	text-align: center;
+	padding: 15px 0;
+	position: relative;
+}
+.info-tabs>li.active{
+	border-bottom: solid 2px #e3e3e3;
+}
+.just-text{
+	background-color: white;
+	padding: 15px 0;
+}
+.just-text>ul{
+	text-align: center;
+}
+.just-text>ul>li{
+	display: inline-block;
+}
+.border-red{
+	width: 25%;
+	border-radius: 25px;
+	background-color: red;
+	margin-right: 10px;
+	color: white;
+}
+.main-info{
+	width: 100%;
+	position: relative;
+	background-color: #e3e3e3;
+	height: auto;
+}
+.room-detail-info{
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	background-color: white;
+}
+.room-img, .detail-info, .reservation-btn{
+	display: inline-block;
+}
+.room-img{
+	width: 25%;
+}
+.detail-info{
+	width: 60%;
+	vertical-align: top;
+	font-size: 14px;
+	position: relative;
+}
+.detail-info>li:nth-child(2){
+	margin-bottom: 10%;
+}
+.detail-info>li:nth-child(3), .detail-info>li:last-child{
+	display: inline-block;
+}
+.detail-info>li:nth-child(3){
+	padding-right: 20px;
+}
+.reservation-btn{
+	width: 15%;
+	position: relative;
+	bottom: 0;
+}
+.pension-menu{
+	background-color: white;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pension-info-text{
+	text-align: center;
+	border-bottom: solid 1px #e3e3e3;
+	padding: 20px 0;
+}
+.location-menu{
+	background-color: white;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.location-info-text{
+	text-align: center;
+	border-bottom: solid 1px #e3e3e3;
+	padding: 20px 0;
+}
+.reviews-menu{
+	background-color: white;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+}
+.reviews-write-text{
+	text-align: center;
+	border-bottom: solid 1px #e3e3e3;
+	padding: 20px 0;
+}
+

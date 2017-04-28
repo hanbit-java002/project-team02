@@ -54,6 +54,8 @@ define([
 	$(".back-history").on("click", function() {
 		window.history.back();
 	});
-
+	$(".glyphicon-search").on("click", function() {
+		location.href = global.root + "/search_main.html";
+	});
 	switchmenu();
 });

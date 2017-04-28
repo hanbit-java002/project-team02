@@ -1,107 +1,863 @@
 @import 'lib/include.all.less';
+
 @import 'common.css';
 
-.info-tabs{
-	width: 100%;
-	position: relative;
+ul {list-style-type:
+	none;
 }
-.info-tabs>li{
-	display: inline-block;
-	width: 25%;
-	text-align: center;
-	padding: 15px 0;
-	position: relative;
-}
-.info-tabs>li.active{
-	border-bottom: solid 2px #e3e3e3;
-}
-.just-text{
-	background-color: white;
-	padding: 15px 0;
-}
-.just-text>ul{
-	text-align: center;
-}
-.just-text>ul>li{
-	display: inline-block;
-}
-.border-red{
-	width: 25%;
-	border-radius: 25px;
-	background-color: red;
-	margin-right: 10px;
-	color: white;
-}
-.main-info{
-	width: 100%;
-	position: relative;
-	background-color: #e3e3e3;
-	height: auto;
-}
-.room-detail-info{
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	background-color: white;
-}
-.room-img, .detail-info, .reservation-btn{
-	display: inline-block;
-}
-.room-img{
-	width: 25%;
-}
-.detail-info{
-	width: 60%;
-	vertical-align: top;
-	font-size: 14px;
-	position: relative;
-}
-.detail-info>li:nth-child(2){
-	margin-bottom: 10%;
-}
-.detail-info>li:nth-child(3), .detail-info>li:last-child{
-	display: inline-block;
-}
-.detail-info>li:nth-child(3){
-	padding-right: 20px;
-}
-.reservation-btn{
-	width: 15%;
-	position: relative;
-	bottom: 0;
-}
-.pension-menu{
-	background-color: white;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
-.pension-info-text{
-	text-align: center;
-	border-bottom: solid 1px #e3e3e3;
-	padding: 20px 0;
-}
-.location-menu{
-	background-color: white;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
-.location-info-text{
-	text-align: center;
-	border-bottom: solid 1px #e3e3e3;
-	padding: 20px 0;
-}
-.reviews-menu{
-	background-color: white;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	cursor: pointer;
-}
-.reviews-write-text{
-	text-align: center;
-	border-bottom: solid 1px #e3e3e3;
-	padding: 20px 0;
+body {font-family: Verdana, sans-serif;}
+
+.reservation{
+	/*display: none;*/
 }
 
+/* date-banner header */
+.date-banner {
+	height: 100px;
+	text-align: center;
+	padding: 25px 25px;
+	width: 100%;
+	background: #00AAFF;
+}
+
+/* date-banner list */
+.date-banner ul {
+	margin: 0;
+	padding: 0;
+}
+
+.date-banner ul li {
+	color: white;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+/* Previous button inside date-banner header */
+.date-banner .prev {
+	float: left;
+	font-size: 15px;
+	padding-top: 10px;
+}
+
+/* Next button */
+.date-banner .next {
+	float: right;
+	font-size: 15px;
+	padding-top: 10px;
+}
+
+.calendar01{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow-y: scroll;
+	height: 320px;
+}
+
+.this-month{
+	margin: 0px 10px 0px 10px;
+	padding: 10px 0;
+	text-align: left;
+	color: #000;
+	font-size: 15px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+	margin: 0px 10px 0px 10px;
+	padding: 10px 0;
+	background-color: #fff;
+}
+
+.weekdays li {
+	font-size: 18px;
+	display: inline-block;
+	width: 13.6%;
+	color: #666;
+	text-align: center;
+}
+
+.weekdays>.Weeks{
+	color: #000000;
+}
+
+.weekdays>.Sat{
+	color: #0000ff;
+}
+.weekdays>.Sun{
+	color: #ff0000;
+}
+
+/* Days (1-31) */
+.days {
+	height: 240px;
+	margin: 0px 10px 0px 10px;
+	padding: 10px 0;
+	background: #FFFFFF;
+}
+
+.days li {
+	list-style-type: none;
+	display: inline-block;
+	width: 13.6%;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size:15px;
+	color:#777;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.days>.Weeks{
+	color: #000000;
+}
+.days>.Sat{
+	color: #0000ff;
+}
+.days>.Sun{
+	color: #ff0000;
+}
+
+.days li:hover{
+	background-color: #00AAFF;
+	color: #fff;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+	padding: 5px;
+	background: #00AAFF;
+	color: white !important
+}
+
+
+.reserv-select{
+	width: 100%;
+	height: 40px;
+	/*margin-top: 50px;*/
+	display: inline-block;
+}
+
+#confirm{
+	float: left;
+	width: 180px;
+	height: 100%;
+	border: 1px solid #9d9d9d;
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+	font-size: 20px;
+	text-align: center;
+}
+#cancel{
+	float: right;
+	width: 180px;
+	height: 100%;
+	border: 1px solid #9d9d9d;
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+	font-size: 20px;
+	text-align: center;
+}
+
+#confirm:hover{
+	background-color: #9d9d9d;
+}
+#cancel:hover{
+	background-color: #9d9d9d;
+}
+
+/*-------*/
+
+.pension-location{
+	/*display: none;*/
+	width: 100%;
+	height: 640px;
+}
+
+.pension-location .banner{
+	text-align: center;
+	padding: 26px 25px;
+	width: 100%;
+	color: #FFF;
+	background: #00AAFF;
+}
+
+.location-select{
+	height: 560px;
+	margin: 0;
+	background-color: #fff;
+}
+#pension-container{
+	margin: 100px 0 100px 0;
+	display: inline-block;
+}
+
+#pension-container .location-row01,
+#pension-container .location-row02,
+#pension-container .location-row03,
+#pension-container .location-row04{
+
+}
+
+#pension-container .area{
+	margin: 0px 10px 20px 10px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 3px;
+	width: 100px;
+	height: 40px;
+	background-color: #d4d4d4;
+	cursor: pointer;
+}
+
+#pension-container .area:hover{
+	background-color: #777777;
+}
+
+.area>ul>li{
+	font-size: 18px;
+	padding: 5px;
+}
+
+/*-------*/
+
+.detail-search{
+	width: 100%;
+	height: 640px;
+	/*display: none;*/
+}
+
+.detail-search .banner{
+	text-align: center;
+	padding: 26px 25px;
+	width: 100%;
+	color: #FFF;
+	background: #00AAFF;
+}
+
+.detail-section{
+	margin-top: 20px;
+	width: 100%;
+	height: 400px;
+}
+
+.detail-row01,
+.detail-row02,
+.detail-row03{
+	margin: 15px;
+	width: 100%;
+	height: 40px;
+}
+.detail-row04{
+	margin-top: 5px;
+	margin-left: 15px;
+	width: 100%;
+	font-size: 15px;
+	height: 30px;
+}
+
+.detail-row01> #cost{
+	float: left;
+}
+.detail-row02> #available{
+	float: left;
+}
+.detail-row03> #capable{
+	float: left;
+}
+.detail-row04> #theme{
+	float: left;
+}
+
+.detail-row01> #detail-dropdown,
+.detail-row02> #detail-dropdown,
+.detail-row03> #detail-dropdown{
+	margin-right: 30px;
+	border: 1px solid #9d9d9d;
+	float: right;
+	width: 180px;
+	height: 30px;
+	font-size: 15px;
+}
+
+#detail-dropdown>ul{
+	margin-left: 5px;
+	float: left;
+}
+#detail-dropdown>i.fa-angle-down{
+	text-align: center;
+	font-size: 30px;
+	float: right;
+	margin-right: 5px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	width: 150px;
+	height: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.theme-select{
+	display: inline-block;
+	margin: 0 15px 0px 15px;
+	width: 90%;
+	height: 200px;
+	overflow: scroll;
+	font-size: 15px;
+	text-align: center;
+}
+
+.theme-select>i.fa{
+	margin : 10px;
+}
+
+.theme-select>i.fa:hover{
+	background-color: #00AAFF;
+	color: #fff;
+}
+
+.detail-select{
+	width: 100%;
+	height: 40px;
+	display: inline-block;
+}
+
+.detail-select #confirm02,
+.detail-select #reset-search{
+	background-color: #00AAFF;
+	color: #fff;
+	width: 160px;
+	height: 100%;
+	border: 1px solid #9d9d9d;
+	cursor: pointer;
+	font-size: 15px;
+	text-align: center;
+}
+
+
+@media(max-width: 400px){
+	.main-page>ul>li{
+		display: none;
+	}
+
+	.main-page>ul>li:last-child{
+		display: inline-block;
+	}
+
+}
+
+.main-page{
+	height: 640px;
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	text-align: center;
+}
+
+.main-top{
+	margin: auto;
+	background-image: url(../img/sunrise_101.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 360px;
+	height: 640px;
+	border: 2px solid #777777;
+}
+
+.preference{
+	height: 50px;
+
+}
+
+.main-top>.preference>.fa-bars{
+	float: left;
+	margin-left: 20px;
+	font-size: 20px;
+	padding-top: 15px;
+	cursor: pointer;
+}
+
+.main-top>h1{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 32px;
+	color : #fff;
+	padding: 20px 10px 20px 10px;
+}
+
+#main-search-form {
+	position: relative;
+	width: 75%;
+	max-width: 750px;
+	@margin-auto-width();
+	cursor: pointer;
+}
+
+#main-search {
+	width: 100%;
+	height: 35px;
+	border: solid 1px @main-color;
+	border-radius: 5px;
+	font-size: 15px;
+	padding-left: 70px;
+	padding-right: 200px;
+	background-color: #fff;
+	color: #000000;
+	cursor: pointer;
+}
+
+#main-search>ul>li{
+	display: inline-block;
+	width: 20px;
+}
+
+#search-icon{
+	position: absolute;
+	top: 5px;
+	left: 1px;
+	width: 30px;
+	height: 25px;
+	background-color: #fff;
+	color: #9d9d9d;
+	font-size: 18px;
+	border: 0;
+	text-align: center;
+}
+
+#search-icon>ul>li{
+	color: #000;
+}
+
+.location{
+	width: 100px;
+	height: 100%;
+}
+
+.location>ul>li{
+	padding-top: 5px;
+}
+
+#main-search:focus {
+	outline: none;
+}
+
+#main-search>.fa-search{
+	position: absolute;
+}
+
+#main-search>ul>li{
+	color: #000000;
+}
+
+#main-search-form>.row-section01{
+	max-width: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main-search-form>.row-section02{
+	max-width: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.row1,
+.row2{
+	margin: 15px 0 15px 0;
+}
+
+#placeholder{
+	padding-top: 5px;
+}
+
+.main-select-box01,
+.main-select-box02,
+.main-select-box03,
+.main-select-box04{
+	margin: 20px 0px 20px 0px;
+	padding: 0 0 0 0;
+	border-radius: 5px;
+}
+
+.main-select-box01{
+	float: left;
+	padding-left: 0;
+	padding-right: 0;
+	width: 130px;
+	height: 35px;
+	border: 1px solid #777777;
+	border-radius: 5px;
+	background-color: #ffffff;
+	align-content: center;
+}
+
+.main-select-box02{
+	float: right;
+	padding-left: 0;
+	padding-right: 0;
+	width: 130px;
+	height: 35px;
+	border: 1px solid #777777;
+	background-color: #ffffff;
+	text-align: left;
+}
+
+.main-select-box03{
+	float: left;
+	padding-left: 0;
+	padding-right: 0;
+	width: 130px;
+	height: 35px;
+	border: 1px solid #777777;
+	background-color: #ffffff;
+	align-content: center;
+}
+
+.main-select-box04{
+	float: right;
+	padding-left: 0;
+	padding-right: 0;
+	width: 130px;
+	height: 35px;
+	border: 1px solid #777777;
+	background-color: #ffffff;
+	text-align: left;
+}
+
+.main-select-box01>i.fa-calendar{
+	margin: 3px 5px 5px 5px;
+	position: relative;
+	float: left;
+	font-size: 25px;
+	color: #000;
+}
+
+.main-select-box02>i.fa-calendar{
+	margin: 3px 5px 5px 5px;
+	position: relative;
+	float: left;
+	font-size: 25px;
+	color: #000;
+
+}
+
+.main-select-box03>i.fa-user-o{
+	margin: 3px 5px 5px 5px;
+	position: relative;
+	float: left;
+	font-size: 25px;
+	color: #000;
+
+}
+
+.main-select-box04>i.fa-home{
+	margin: 3px 5px 5px 5px;
+	position: relative;
+	float: left;
+	font-size: 25px;
+	color: #000;
+
+}
+
+.main-select-box01>ul>li{
+
+}
+
+.search-btn{
+	margin-top: 40px;
+	position: relative;
+	display: inline-block;
+	height: 35px;
+	width: 160px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #00AAFF;
+	border: solid 1px #00AAFF;
+	border-radius: 5px;
+	cursor: pointer;
+
+}
+
+.search-btn>ul>li{
+	list-style-type: none;
+	text-align: center;
+	color: #ffffff;
+	font-size: 18px;
+	padding-top: 5px;
+}
+
+#main-search-box>.search-btn{
+	text-align: center;
+}
+
+.hp-container {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+}
+
+.check-container{
+	margin-top: 130px;
+	width: 100%;
+	height: 40px;
+	display: inline-block;
+}
+
+.check-container #todays-pension{
+	float: left;
+	width: 160px;
+	height: 100%;
+	margin-left: 10px;
+	border: 1px solid #9d9d9d;
+	cursor: pointer;
+	background-color: #000;
+	opacity: 0.5;
+	border-radius: 5px;
+	color: #FFF;
+	font-size: 15px;
+	text-align: center;
+
+}
+.check-container #reservation-check {
+	float: right;
+	width: 160px;
+	height: 100%;
+	margin-right: 10px;
+	border: 1px solid #9d9d9d;
+	cursor: pointer;
+	background-color: #000;
+	opacity: 0.5;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 15px;
+	text-align: center;
+}
+
+#todays-pension>ul>li{
+	color: #fff;
+}
+#reservation-check>ul>li{
+	color: #fff;
+}
+
+
+@media(max-width: 700px){
+	.main-page>div{
+		width: 100%;
+		height: 100%;
+	}
+
+	.main-top{
+		width: 360px;
+		height: 640px;
+	}
+
+	.reservation{
+		width: 360px;
+		height: 640px;
+	}
+
+	.pension-location{
+		width: 360px;
+		height: 640px;
+	}
+
+	.detail-search{
+		width: 360px;
+		height: 640px;
+	}
+	.main-top>div{
+		width: 100%;
+	}
+
+}
+
+/*------------------------------*/
+
+
+
+/*------------------------------*/
+
+.pop-layer>.pop-container {
+	padding: 20px 25px;
+}
+
+.pop-layer>p.ctxt {
+	color: #666;
+	line-height: 25px;
+}
+
+.pop-layer>.btn-r {
+	width: 100%;
+	margin: 10px 0 20px;
+	padding-top: 10px;
+	border-top: 1px solid #DDD;
+	text-align: right;
+}
+
+.pop-layer {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 410px;
+	height: auto;
+	background-color: #fff;
+	border: 5px solid #3571B5;
+	z-index: 100;
+}
+
+.dim-layer {
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+.dim-layer>.dimBg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+
+.dim-layer>.pop-layer {
+	display: block;
+}
+
+a.btn-layerClose {
+	display: inline-block;
+	height: 25px;
+	padding: 0 14px 0;
+	border: 1px solid #304a8a;
+	background-color: #3f5a9d;
+	font-size: 13px;
+	color: #fff;
+	line-height: 25px;
+}
+
+a.btn-layerClose:hover {
+	border: 1px solid #091940;
+	background-color: #1f326a;
+	color: #fff;
+}
+
+/*------------------------------*/
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+	background: #00d9ff;
+}
+
+.box01{
+	cursor: pointer;
+}
+
+/*------------------------------*/
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+footer{
+	display: none;
+
+}
+.footer-nav-box{
+	display: none;
+}

@@ -1,0 +1,121 @@
+{{set root='.'}}
+{{> header cssName="viewmore"}}
+<div class="hbps-container">
+	<header class="main-bar">
+		<div class="main-bar-box">
+			<i class="fa fa-angle-left"></i>
+			<div class="bar-title">더보기</div>
+		</div>
+	</header>
+	<div class="hbps-content">
+		<section>
+			<div class="hbps-sign-in-btn">로그인</div>
+		</section>
+		<section>
+			<div class="more-menu">
+				<ul>
+					<li>
+						<i class="fa fa-calendar-check-o"></i>
+						<div>예약조회</div>
+					</li>
+					<li>
+						<i class="fa fa-refresh"></i>
+						<div>취소/환불규정</div>
+					</li>
+					<li>
+						<i class="fa fa-question-circle-o"></i>
+						<div>자주묻는질문</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<div class="customer-center">
+				<div class="contact">고객센터 1253-8253</div>
+				<div class="business-hour">
+					평일 09:00~18:00 | 토요일 09:00~15:00<br>
+					(평일 점심시간 12:00~13:00)
+				</div>
+				<div class="call-btn">
+					<i class="fa fa-phone"></i>
+					<div class="call-text">전화문의</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	{{> footer jsName='viewmore'}}
+<div class="hbps-member-popup">
+	<div class="popup-container">
+		<header class="popup-title-box">
+			<div class="popup-title">회원로그인</div>
+			<div class="close-btn"><i class="fa fa-times"></i></div>
+		</header>
+		<section class="hbps-popup-contents">
+			<!-- 로그인할거얌-->
+			<div class="member-signin">
+				<form>
+					<input id="hbps-user-id" type="text" class="hbps-input" placeholder="아이디">
+					<input id="hbps-user-pw" type="password" class="hbps-input" placeholder="비밀번호">
+					<div id="popup-sign-in" class="popup-btn">로그인</div>
+				</form>
+				<ul>
+					<li class="hbps-sign-up">
+						<i class="fa fa-square" aria-hidden="true"></i>
+						<span>회원가입</span>
+					</li>
+					<li class="hbps-forgot">
+						<i class="fa fa-square" aria-hidden="true"></i>
+						<span>아이디/비밀번호 찾기</span>
+					</li>
+				</ul>
+			</div>
+			<div class="member-signup">
+				<form>
+					<label>이름</label>
+					<input type="text" />
+					<br />
+
+					<label>이메일 주소</label>
+					<input type="email" />
+					<br />
+
+					<label>비밀번호</label>
+					<input type="password" />
+					<br />
+
+					<label>비밀번호 확인</label>
+					<input type="password" />
+					<br />
+				</form>
+				<ul>
+					<li class="cancel-btn">취소</li>
+					<li class="confirm-btn">가입하기</li>
+				</ul>
+			</div>
+			<div class="forgot-idpw">
+				<div class="">
+					<div id="forgot-id" class="popup-btn">아이디를 잊으셨나요?</div>
+					<div id="forgot-pw" class="popup-btn">비밀번호를 잊으셨나요?</div>
+				</div>
+			</div>
+			<div class="find-id">
+				<form>
+					<input class="hbps-user-id hbps-input" type="text"  placeholder="이름">
+					<input class=" hbps-user-pw hbps-input" type="text" class=" hbps-user-pw hbps-input" placeholder="이메일">
+					<div class="popup-btn">
+						<div class="popup-confirm-btn">확인</div>
+					</div>
+				</form>
+			</div>
+			<div class="find-pw">
+				<form>
+					<input class="hbps-user-id hbps-input" type="text"  placeholder="아이디">
+					<input class=" hbps-user-pw hbps-input" type="password" class=" hbps-user-pw hbps-input" placeholder="휴대폰번호">
+					<div class="popup-btn">
+						<div class="popup-confirm-btn">확인</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+</div>

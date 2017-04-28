@@ -1,96 +1,447 @@
 {{set root='.'}}
-<!DOCTYPE html>
-<html lang="{{lang}}">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+{{> header cssName="main"}}
+<div class = "hp-container">
+	<header id ="hanbit-pension">
 
-	<title>한빛 팬션</title>
-
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="apple-touch-icon" href="{{root}}/apple-touch-icon.png">
-	<link rel="stylesheet" href="{{root}}/plugins/normalize/normalize.css">
-	<link rel="stylesheet" href="{{root}}/plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{root}}/plugins/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="{{root}}/css/main.css">
-	<script src="{{root}}/plugins/modernizr/modernizr-2.8.3.min.js"></script>
-</head>
-<body>
-<div class="hp-container">
-	<div class="title-row">
-		<div class="back-history">
-			<i class="fa fa-angle-left"></i>
+	</header>
+	<div class = "main-page">
+		<div class = "main-top">
+			<div class="preference">
+				<i class="fa fa-bars"></i>
+			</div>
+			<h1>한빛펜션</h1>
+			<div id="main-search-box">
+				<div id="main-search-form">
+					<div id="main-search" class="search-input">
+						<div id="search-icon">
+							<i class="fa fa-search"></i>
+						</div>
+						<div class="location">
+							<ul>
+								<li>
+									펜션지역
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row-section01">
+						<div class ="row1">
+							<button  onclick="document.getElementsByClassName('reservation')" class="main-select-box01">
+								<i class="fa fa-calendar"></i>
+								<ul id="select">
+									<li id="placeholder">
+										입실
+									</li>
+								</ul>
+							</button>
+							<div class="main-select-box02">
+								<i class="fa fa-calendar"></i>
+								<ul id="select">
+									<li id="placeholder">
+										퇴실
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row-section02">
+						<div class="row2">
+							<div class="main-select-box03">
+								<i class="fa fa-user-o"></i>
+								<ul id="select">
+									<li id="placeholder">
+										2명
+									</li>
+								</ul>
+							</div>
+							<div class="main-select-box04">
+								<i class="fa fa-home"></i>
+								<ul id="select">
+									<li id="placeholder">
+										전체 펜션
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="search-btn">
+					<ul>
+						<li>
+							검색
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="check-container">
+				<button id="todays-pension"><ul><li>오늘숙박 땡처리펜션</li></ul></button>
+				<button id="reservation-check"><ul><li>예약내역 확인</li></ul></button>
+			</div>
 		</div>
-		<div class="pension-title">
-			펜션이름
-		</div>
-		<div class="like-share">
-			<i class="fa fa-heart-o"></i>
-			<i class="fa fa-share-alt"></i>
-		</div>
-	</div>
-	<div class="pension-img">
 
-	</div>
-	<ul class="info-tabs">
-		<li class="room-info active">객실 정보</li>
-		<li class="pension-info">펜션 정보</li>
-		<li class="location-info">위치 정보</li>
-		<li class="reviews">이용 후기</li>
-	</ul>
-	<div class="main-info">
-		<div class="room-menu">
-			<div class="just-text">
+		<!-- >-->
+
+		<div class="reservation">
+			<div class="date-banner">
 				<ul>
-					<li class="border-red">오늘 땡처리</li>
-					<li>오늘만 이용 가능한 특가 객실입니다.</li>
+					<li class="prev">&#8619;입실일<br>
+						<span style="font-size:20px">4.21</span></li>
+					<li class="next">퇴실일 &#8620;<br>
+						<span style="font-size:20px">4.23</span></li>
+					<li>
+						<span style="font-size:20px">April</span><br>
+						<span style="font-size:15px">2박3일</span>
+					</li>
 				</ul>
 			</div>
-			<div class="room-detail-info">
-				<div class="room-img">
-					<img src="{{root}}/img/room-img.jpg" style="width: 100%; height: 99.9%;">
+			<div class="calendar01">
+				<div class="this-month">
+					2017년 4월
 				</div>
-				<ul class="detail-info">
-					<li>평수</li>
-					<li>평수에 따른 인원</li>
-					<li>할인가</li>
-					<li>가격</li>
+				<ul class="weekdays">
+					<li class="Sun">일</li>
+					<li class="Weeks">월</li>
+					<li class="Weeks">화</li>
+					<li class="Weeks">수</li>
+					<li class="Weeks">목</li>
+					<li class="Weeks">금</li>
+					<li class="Sat">토</li>
 				</ul>
-				<div class="reservation-btn">
-					<input type="button" class="reservation-button" value="예약 가능"style="background-color: black ;color: white; bottom: 0;">
-				</div>
-			</div>
-			<div class="room-detail-info">
-				<div class="room-img">
-					<img src="{{root}}/img/room-img.jpg" style="width: 100%; height: 99.9%;">
-				</div>
-				<ul class="detail-info">
-					<li>평수</li>
-					<li>평수에 따른 인원</li>
-					<li>할인가</li>
-					<li>가격</li>
+				<ul class="days">
+					<li>26</li>
+					<li>27</li>
+					<li>28</li>
+					<li>29</li>
+					<li>30</li>
+					<li>31</li>
+					<li class="Sat">1</li>
+					<li class="Sun">2</li>
+					<li class="Weeks">3</li>
+					<li class="Weeks">4</li>
+					<li class="Weeks">5</li>
+					<li class="Weeks">6</li>
+					<li class="Weeks">7</li>
+					<li class="Sat">8</li>
+					<li class="Sun">9</li>
+					<li class="Weeks">10</li>
+					<li class="Weeks">11</li>
+					<li class="Weeks">12</li>
+					<li class="Weeks">13</li>
+					<li class="Weeks">14</li>
+					<li class="Sat">15</li>
+					<li class="Sun">16</li>
+					<li class="Weeks">17</li>
+					<li class="Weeks">18</li>
+					<li class="Weeks">19</li>
+					<li class="Weeks">20</li>
+					<li class="Weeks"><span class="active">21</span></li>
+					<li class="Sat"><span class="active">22</span></li>
+					<li class="Sun"><span class="active">23</span></li>
+					<li class="Weeks">24</li>
+					<li class="Weeks">25</li>
+					<li class="Weeks">26</li>
+					<li class="Weeks">27</li>
+					<li class="Weeks">28</li>
+					<li class="Sat">29</li>
+					<li class="Sun">30</li>
+					<li>01</li>
+					<li>02</li>
+					<li>03</li>
+					<li>04</li>
+					<li>05</li>
+					<li>06</li>
 				</ul>
-				<div class="reservation-btn">
-					<input type="button" class="reservation-button" value="예약 가능"style="background-color: black ;color: white; bottom: 0px; ">
+				<div class="this-month">
+					2017년 5월
+				</div>
+				<ul class="weekdays">
+					<li class="Sun">일</li>
+					<li class="Weeks">월</li>
+					<li class="Weeks">화</li>
+					<li class="Weeks">수</li>
+					<li class="Weeks">목</li>
+					<li class="Weeks">금</li>
+					<li class="Sat">토</li>
+				</ul>
+				<ul class="days">
+					<li>26</li>
+					<li>27</li>
+					<li>28</li>
+					<li>29</li>
+					<li>30</li>
+					<li>31</li>
+					<li class="Sat">1</li>
+					<li class="Sun">2</li>
+					<li class="Weeks">3</li>
+					<li class="Weeks">4</li>
+					<li class="Weeks">5</li>
+					<li class="Weeks">6</li>
+					<li class="Weeks">7</li>
+					<li class="Sat">8</li>
+					<li class="Sun">9</li>
+					<li class="Weeks">10</li>
+					<li class="Weeks">11</li>
+					<li class="Weeks">12</li>
+					<li class="Weeks">13</li>
+					<li class="Weeks">14</li>
+					<li class="Sat">15</li>
+					<li class="Sun">16</li>
+					<li class="Weeks">17</li>
+					<li class="Weeks">18</li>
+					<li class="Weeks">19</li>
+					<li class="Weeks">20</li>
+					<li class="Weeks"><span class="active">21</span></li>
+					<li class="Sat"><span class="active">22</span></li>
+					<li class="Sun"><span class="active">23</span></li>
+					<li class="Weeks">24</li>
+					<li class="Weeks">25</li>
+					<li class="Weeks">26</li>
+					<li class="Weeks">27</li>
+					<li class="Weeks">28</li>
+					<li class="Sat">29</li>
+					<li class="Sun">30</li>
+					<li>01</li>
+					<li>02</li>
+					<li>03</li>
+					<li>04</li>
+					<li>05</li>
+					<li>06</li>
+				</ul>
+				<div class="this-month">
+					2017년 6월
+				</div>
+				<ul class="weekdays">
+					<li class="Sun">일</li>
+					<li class="Weeks">월</li>
+					<li class="Weeks">화</li>
+					<li class="Weeks">수</li>
+					<li class="Weeks">목</li>
+					<li class="Weeks">금</li>
+					<li class="Sat">토</li>
+				</ul>
+				<ul class="days">
+					<li>26</li>
+					<li>27</li>
+					<li>28</li>
+					<li>29</li>
+					<li>30</li>
+					<li>31</li>
+					<li class="Sat">1</li>
+					<li class="Sun">2</li>
+					<li class="Weeks">3</li>
+					<li class="Weeks">4</li>
+					<li class="Weeks">5</li>
+					<li class="Weeks">6</li>
+					<li class="Weeks">7</li>
+					<li class="Sat">8</li>
+					<li class="Sun">9</li>
+					<li class="Weeks">10</li>
+					<li class="Weeks">11</li>
+					<li class="Weeks">12</li>
+					<li class="Weeks">13</li>
+					<li class="Weeks">14</li>
+					<li class="Sat">15</li>
+					<li class="Sun">16</li>
+					<li class="Weeks">17</li>
+					<li class="Weeks">18</li>
+					<li class="Weeks">19</li>
+					<li class="Weeks">20</li>
+					<li class="Weeks"><span class="active">21</span></li>
+					<li class="Sat"><span class="active">22</span></li>
+					<li class="Sun"><span class="active">23</span></li>
+					<li class="Weeks">24</li>
+					<li class="Weeks">25</li>
+					<li class="Weeks">26</li>
+					<li class="Weeks">27</li>
+					<li class="Weeks">28</li>
+					<li class="Sat">29</li>
+					<li class="Sun">30</li>
+					<li>01</li>
+					<li>02</li>
+					<li>03</li>
+					<li>04</li>
+					<li>05</li>
+					<li>06</li>
+				</ul>
+				<div class="this-month">
+					2017년 7월
+				</div>
+				<ul class="weekdays">
+					<li class="Sun">일</li>
+					<li class="Weeks">월</li>
+					<li class="Weeks">화</li>
+					<li class="Weeks">수</li>
+					<li class="Weeks">목</li>
+					<li class="Weeks">금</li>
+					<li class="Sat">토</li>
+				</ul>
+				<ul class="days">
+					<li>26</li>
+					<li>27</li>
+					<li>28</li>
+					<li>29</li>
+					<li>30</li>
+					<li>31</li>
+					<li class="Sat">1</li>
+					<li class="Sun">2</li>
+					<li class="Weeks">3</li>
+					<li class="Weeks">4</li>
+					<li class="Weeks">5</li>
+					<li class="Weeks">6</li>
+					<li class="Weeks">7</li>
+					<li class="Sat">8</li>
+					<li class="Sun">9</li>
+					<li class="Weeks">10</li>
+					<li class="Weeks">11</li>
+					<li class="Weeks">12</li>
+					<li class="Weeks">13</li>
+					<li class="Weeks">14</li>
+					<li class="Sat">15</li>
+					<li class="Sun">16</li>
+					<li class="Weeks">17</li>
+					<li class="Weeks">18</li>
+					<li class="Weeks">19</li>
+					<li class="Weeks">20</li>
+					<li class="Weeks"><span class="active">21</span></li>
+					<li class="Sat"><span class="active">22</span></li>
+					<li class="Sun"><span class="active">23</span></li>
+					<li class="Weeks">24</li>
+					<li class="Weeks">25</li>
+					<li class="Weeks">26</li>
+					<li class="Weeks">27</li>
+					<li class="Weeks">28</li>
+					<li class="Sat">29</li>
+					<li class="Sun">30</li>
+					<li>01</li>
+					<li>02</li>
+					<li>03</li>
+					<li>04</li>
+					<li>05</li>
+					<li>06</li>
+				</ul>
+			</div>
+			<div class="reserv-select">
+				<button id="confirm">확인</button>
+				<button id="cancel">취소</button>
+			</div>
+		</div>
+
+		<!-- >-->
+		<div class="pension-location">
+			<div class="banner">
+				<span style="font-size:20px">펜션 지역 선택</span>
+			</div>
+			<div class="location-select">
+				<div id="pension-container">
+					<div class="location-row01">
+						<div class="area"><ul><li>경기</li></ul></div>
+						<div class="area"><ul><li>서울</li></ul></div>
+						<div class="area"><ul><li>인천</li></ul></div>
+					</div>
+					<div class="location-row02">
+						<div class="area"><ul><li>가평</li></ul></div>
+						<div class="area"><ul><li>평택</li></ul></div>
+						<div class="area"><ul><li>김포</li></ul></div>
+					</div>
+					<div class="location-row03">
+						<div class="area"><ul><li>대전</li></ul></div>
+						<div class="area"><ul><li>광주</li></ul></div>
+						<div class="area"><ul><li>대구</li></ul></div>
+					</div>
+					<div class="location-row04">
+						<div class="area"><ul><li>속초</li></ul></div>
+						<div class="area"><ul><li>부산</li></ul></div>
+						<div class="area"><ul><li>제주도</li></ul></div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="pension-menu">
-			<div class="pension-info-text">
-				<p>펜션정보</p>
+
+		<!-- >-->
+		<div class="detail-search">
+			<div class="banner">
+				<span style="font-size:20px">상세 검색</span>
+			</div>
+			<div class="detail-section">
+				<div class="detail-row01">
+					<div id="cost">
+						<span style="font-size:15px">가격</span>
+					</div>
+					<div id="detail-dropdown">
+						<ul>
+							<li>
+								가격전체
+							</li>
+						</ul>
+						<i class="fa fa-angle-down"></i>
+						<div id="myDropdown" class="dropdown-content">
+							<a href="#">Link 1</a>
+							<a href="#">Link 2</a>
+							<a href="#">Link 3</a>
+						</div>
+					</div>
+				</div>
+				<div class="detail-row02">
+					<div id="available">
+						<span style="font-size:15px">방 갯수</span>
+					</div>
+					<div id="detail-dropdown">
+						<ul>
+							<li>
+								방갯수
+							</li>
+						</ul>
+						<i class="fa fa-angle-down"></i>
+					</div>
+				</div>
+				<div class="detail-row03">
+					<div id="capable">
+						<span style="font-size:15px">화장실 갯수</span>
+					</div>
+					<div id="detail-dropdown">
+						<ul>
+							<li>
+								화장실갯수
+							</li>
+						</ul>
+						<i class="fa fa-angle-down"></i>
+					</div>
+				</div>
+				<div class="detail-row04">
+					<div id="theme">시설/테마</div>
+				</div>
+				<div class="theme-select">
+					<i class="fa fa-bicycle"><br>자전거 도로</i>
+					<i class="fa fa-birthday-cake"><br>이벤트 진행</i>
+					<i class="fa fa-futbol-o"><br>스포츠 센터</i>
+					<i class="fa fa-ambulance"><br>응급센터</i>
+					<i class="fa fa-bicycle"><br>자전거 도로</i>
+					<i class="fa fa-birthday-cake"><br>이벤트 진행</i>
+					<i class="fa fa-futbol-o"><br>스포츠 센터</i>
+					<i class="fa fa-ambulance"><br>응급센터</i>
+					<i class="fa fa-bicycle"><br>자전거 도로</i>
+					<i class="fa fa-birthday-cake"><br>이벤트 진행</i>
+					<i class="fa fa-futbol-o"><br>스포츠 센터</i>
+					<i class="fa fa-ambulance"><br>응급센터</i>
+					<i class="fa fa-bicycle"><br>자전거 도로</i>
+					<i class="fa fa-birthday-cake"><br>이벤트 진행</i>
+					<i class="fa fa-futbol-o"><br>스포츠 센터</i>
+					<i class="fa fa-ambulance"><br>응급센터</i>
+					<i class="fa fa-bicycle"><br>자전거 도로</i>
+					<i class="fa fa-birthday-cake"><br>이벤트 진행</i>
+					<i class="fa fa-futbol-o"><br>스포츠 센터</i>
+					<i class="fa fa-ambulance"><br>응급센터</i>
+					<i class="fa fa-bicycle"><br>자전거 도로</i>
+					<i class="fa fa-birthday-cake"><br>이벤트 진행</i>
+					<i class="fa fa-futbol-o"><br>스포츠 센터</i>
+					<i class="fa fa-ambulance"><br>응급센터</i>
+				</div>
+			</div>
+			<div class="detail-select">
+				<button id="confirm02">확인</button>
+				<button id="reset-search">검색조건 초기화</button>
 			</div>
 		</div>
-		<div class="location-menu">
-			<div class="location-info-text">
-				<p>위치 정보</p>
-			</div>
-		</div>
-		<div class="reviews-menu">
-			<div class="reviews-write-text">
-				<p>이용 후기</p>
-			</div>
-		</div>
+		<!-- >-->
 	</div>
-	{{> footer jsName='main'}}
+{{> footer jsName='main'}}
