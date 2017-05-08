@@ -48,13 +48,16 @@ define([
 			$(".reviews").addClass("active");
 		});
 	}
-	$(".room-menu").on("click", function() {
+	$(".room-detail-info").on("click", function() {
 		location.href = global.root + "/main-room.html";
 	});
 	$(".back-history").on("click", function() {
 		window.history.back();
 	});
 	$(".glyphicon-search").on("click", function() {
+		location.href = global.root + "/search_main.html";
+	});
+	$("#reservation-check").on("click", function() {
 		location.href = global.root + "/search_main.html";
 	});
 	switchmenu();
