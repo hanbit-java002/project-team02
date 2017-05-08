@@ -51,11 +51,11 @@ define([
 	$(".room-detail-info").on("click", function() {
 		location.href = global.root + "/main-room.html";
 	});
+	$(".footer-nav-box>ul>li:first-child").on("click", function() {
+		location.href = global.root + "/index.html";
+	});
 	$(".back-history").on("click", function() {
 		window.history.back();
-	});
-	$(".glyphicon-search").on("click", function() {
-		location.href = global.root + "/search_main.html";
 	});
 	$("#reservation-check").on("click", function() {
 		location.href = global.root + "/reservation_result.html";
