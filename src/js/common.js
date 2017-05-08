@@ -58,7 +58,10 @@ define([
 		location.href = global.root + "/search_main.html";
 	});
 	$("#reservation-check").on("click", function() {
-		location.href = global.root + "/search_main.html";
+		location.href = global.root + "/reservation_result.html";
+	});
+	$(".search-btn").on("click", function() {
+		location.href = global.root + "/pension_list.html";
 	});
 	switchmenu();
 });
