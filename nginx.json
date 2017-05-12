@@ -2,11 +2,11 @@
 	"server_name": [
 		"localhost.com"
 	],
-	"listen": 83,
+	"listen": 89,
 	"statics": [
 		{
 			"location": "/",
-			"root": "/hanbit/CyphersLove/dist"
+			"root": "/hanbit/hanbitpension/project-team02-front/dist"
 		}
 	],
 	"proxys": [
@@ -16,7 +16,7 @@
 			"backends": [
 				{
 					"address": "127.0.0.1",
-					"port": 8088
+					"port": 8085
 				}
 			]
 		}
