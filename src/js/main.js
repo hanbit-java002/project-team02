@@ -2,7 +2,7 @@ require([
 	"common",
 ], function() {
 	$(".search_box").click(function() {
-		location.href = "pension_list.html";
+		location.href = "pension-list.html";
 	});
 
 	$(".btn_reservation_list").click(function() {
