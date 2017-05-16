@@ -19,9 +19,9 @@ require([
 		$.ajax({
 			url: global.root + "/api/post",
 			Method: "POST",
-			data:{
+			data: {
 				title: title,
-				post: contents
+				post: contents,
 			},
 			success: function(data) {
 				if (data.result === "ok") {
@@ -38,7 +38,7 @@ require([
 				else {
 					alert(jqXHR.responseJSON.message);
 				}
-			}
+			},
 		});
 	});
 });
