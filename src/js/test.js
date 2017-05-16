@@ -18,10 +18,10 @@ require([
 		}
 		$.ajax({
 			url: global.root + "/api/post",
-			Method: "POST",
-			data:{
+			method: "POST",
+			data: {
 				title: title,
-				post: contents
+				contents: contents,
 			},
 			success: function(data) {
 				if (data.result === "ok") {
@@ -38,7 +38,7 @@ require([
 				else {
 					alert(jqXHR.responseJSON.message);
 				}
-			}
+			},
 		});
 	});
 });
