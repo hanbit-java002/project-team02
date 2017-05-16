@@ -22,10 +22,9 @@ require([
 		if (popupCssSelector === cssSelector) {
 			return;
 		}
-
 		popupCssSelector = cssSelector;
 
-		$("body").css("overflow", "hidden");
+		$(".region_select").css("overflow", "auto");
 
 		var blockLayerHTML = "<div class='block_page'></div>";
 		$("body").append(blockLayerHTML);
@@ -39,4 +38,12 @@ require([
 	$(".btn_region_search").on("click", function() {
 		openLayerPopup(".region_select");
 	});
+	$(".sido-control>li").on("click", function() {
+		$(".sido-control>li").removeClass("active");
+		$(".sido-control>li>.gg-control").hide();
+
+		$(this).addClass("active");
+		$(this).find(".gg-control").show();
+	});
+	select();
 });
