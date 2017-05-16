@@ -54,6 +54,9 @@ define([
 	$(".footer-nav-box>ul>li:first-child").on("click", function() {
 		location.href = global.root + "/index.html";
 	});
+	$(".footer-nav-box>ul>li:last-child").on("click", function() {
+		location.href = global.root + "/viewmore.html";
+	});
 	$(".back-history").on("click", function() {
 		window.history.back();
 	});
