@@ -16,9 +16,6 @@ define([
 		$(".btn_region_search").text($(this).text());
 	});*/
 
-	$(".search-input").on("click", function() {
-
-	});
 	function switchmenu() {
 		$(".room-menu").show();
 		$(".pension-menu").hide();
