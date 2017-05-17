@@ -23,7 +23,7 @@ require([
 		}
 		popupCssSelector = cssSelector;
 
-		$(".region_select").css("overflow", "auto");
+		/* $(".region_select").css("overflow", "auto");*/
 
 		var blockLayerHTML = "<div class='block_page'></div>";
 		$("body").append(blockLayerHTML);

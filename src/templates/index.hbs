@@ -171,23 +171,67 @@
 					<div class="reservation_date">
 						<div class="chk_in">
 							<i class="fa fa-calendar"></i>
-							<button type="button" class="btn_chk_in btn">4월11일(화)</button>
+							<input type="date" action="/action_page.php" class="btn_chk_in btn">
 						</div>
 						<div class="chk_out">
 							<i class="fa fa-calendar"></i>
-							<button type="button" class="btn_chk_out btn">4월12일(수)</button>
+							<input type="date" action="/action_page.php" class="btn_chk_out btn">
 						</div>
 					</div>
 				</div>
 				<div class="reservation_box">
 					<div class="reservation_date">
 						<div class="chk_in">
-							<i class="fa fa-user-o"></i>
-							<button type="button" class="btn_chk_in btn">2명</button>
+							<button class="main-select-box03" type="button" id="dropdownMenu1"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								<i class="fa fa-user-o"></i>
+								<ul id="select">
+									<li id="placeholder" class="avaliable">
+										2명
+									</li>
+								</ul>
+							</button>
+							<ul id="myDropdown" class="dropdown-content dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li class="count">
+									<a href="#RoomforTwo">2명</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li class="count">
+									<a href="#RoomforThree">3명</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li class="count">
+									<a href="#RoomforFour">4명</a>
+								</li>
+							</ul>
+							<!--<i class="fa fa-user-o"></i>
+                            <button type="button" class="btn_chk_in btn">2명</button>-->
 						</div>
 						<div class="chk_out">
-							<i class="fa fa-home"></i>
-							<button type="button" class="btn_chk_out btn">전체펜션</button>
+							<button class="main-select-box04" type="button" id="dropdownMenu2"
+									data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+								<i class="fa fa-home"></i>
+								<ul id="select">
+									<li class="pension-theme">
+										전체 펜션
+									</li>
+								</ul>
+							</button>
+							<ul id="myDropdown2" class="dropdown-content2 dropdown-menu" aria-labelledby="dropdownMenu2">
+								<li class="count">
+									<a class="theme-pension" href="#swim">수영장 펜션</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li class="count">
+									<a class="theme-pension" href="#spar">스파 펜션</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li class="count">
+									<a class="theme-pension" href="#workshop">워크샵 펜션</a>
+								</li>
+							</ul>
+							<!--<i class="fa fa-home"></i>
+                            <button type="button" class="btn_chk_out btn">전체펜션</button>-->
 						</div>
 					</div>
 				</div>
@@ -203,6 +247,7 @@
 						</div>
 					</button>
 				</div>
+		</section>
 		</section>
 	</div>
 </div>
