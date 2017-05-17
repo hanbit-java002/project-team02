@@ -4,7 +4,6 @@ require([
 	$(".search_box").click(function() {
 		location.href = "pension-list.html";
 	});
-
 	$(".btn_reservation_list").click(function() {
 		location.href = "reservation_result.html";
 	});
@@ -45,5 +44,16 @@ require([
 		$(this).addClass("active");
 		$(this).find(".gg-control").show();
 	});
-	select();
+
+	$(".gg-control>li").on("click", function() {
+		var sido = $(this).parents(".sd").attr("value");
+		var gugun = $(this).text();
+
+		var sidogugun = sido + " - " + gugun;
+
+		$(".btn_region_search>span").text(sidogugun);
+		$(popupCssSelector).hide();
+
+		$(".block_page").remove();
+	});
 });
