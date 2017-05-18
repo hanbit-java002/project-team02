@@ -1,49 +1,41 @@
 @import 'lib/include.all.less';
-@import 'common.css';
+@import 'common.less';
 
-.hp-container{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
+.hbps-content {
+	background-color: #e3e3e3;
+	border-bottom: 1px solid #999;
 }
-.title-row{
-	width: 100%;
-	position: fixed;
-	background-color: white;
-	height: 50px;
-	z-index: 3;
-}
-.back-history{
-	width: 13%;
-}
-.pension-title{
-	white-space: nowrap;
-	width: 70%;
-	font-size: 18px;
-	text-overflow: ellipsis;
-}
+
 .like-share{
-	width: 16.9%;
+	position: absolute;
+	top: 24px;
+	right: 27px;
 }
-.title-row>div{
+
+.like-share>i {
 	display: inline-block;
-	padding: 15px 0;
-	text-align: center;
+	font-size: 20px;
+	margin-right: 15px;
 }
+
 .pension-img-box{
 	width: 100%;
-	position: relative;
-	background-image: url("../img/pension-img.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	z-index: -1;
-	height: 400px;
 }
+
+.pension-img-box>img {
+	width: 100%;
+	height: 25%;
+	@background-img-cover();
+	background-position-x: 50%;
+	background-position-y: 50%;
+}
+
 .info-tabs{
 	width: 100%;
+	background-color: white;
 	position: relative;
 }
+
 .info-tabs>li{
 	display: inline-block;
 	width: 25%;
@@ -51,19 +43,24 @@
 	padding: 15px 0;
 	position: relative;
 }
+
 .info-tabs>li.active{
 	border-bottom: solid 2px #e3e3e3;
 }
-.just-text{
+
+.special-price-text{
 	background-color: white;
 	padding: 15px 0;
 }
-.just-text>ul{
+
+.special-price-text>ul{
 	text-align: center;
 }
-.just-text>ul>li{
+
+.special-price-text>ul>li{
 	display: inline-block;
 }
+
 .border-red{
 	width: 25%;
 	border-radius: 25px;
@@ -71,50 +68,72 @@
 	margin-right: 10px;
 	color: white;
 }
+
 .main-info{
 	width: 100%;
 	position: relative;
-	background-color: #e3e3e3;
-	height: auto;
 }
-.room-detail-info{
-	margin-top: 10px;
+
+.room-list{
+	margin: 10px 0px;
 	width: 100%;
-	height: auto;
+}
+
+.room-list>li {
+	margin-bottom: 10px;
 	background-color: white;
 }
-.room-img, .detail-info, .reservation-btn{
+
+.room-list>li:last-child {
+	margin-bottom: 0px;
+}
+
+
+.room-menu>ul>li>div {
 	display: inline-block;
-}
-.room-img{
-	width: 25%;
-}
-.detail-info{
-	width: 60%;
 	vertical-align: top;
-	font-size: 14px;
+}
+
+.room-img{
+	width: 35%;
+	height: 103px;
+}
+
+.room-img>img {
+	@background-img-cover();
+	width: 100%;
+	height: 100%;
+}
+
+.room-info {
 	position: relative;
+	text-align: left;
+	padding: 15px;
+	font-size: 16px;
 }
-.detail-info>li:nth-child(2){
-	margin-bottom: 10%;
+
+.room-size {
+	font-size: 12px;
+	padding-bottom: 12px;
 }
-.detail-info>li:nth-child(3), .detail-info>li:last-child{
-	display: inline-block;
+
+.booking-btn {
+	position: absolute;
+	bottom: 13px;
+	right: -55px;
+	color: white;
+	background-color: #666;
+	text-align: center;
+	padding: 5px 15px;
 }
-.detail-info>li:nth-child(3){
-	padding-right: 20px;
-}
-.reservation-btn{
-	width: 15%;
-	position: relative;
-	bottom: 0;
-}
+
 .pension-menu{
 	background-color: white;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .pension-info-text{
 	text-align: center;
 	border-bottom: solid 1px #e3e3e3;
