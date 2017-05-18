@@ -1,83 +1,80 @@
 {{set root='.'}}
 {{> header cssName="main-room"}}
-	<header class="main-bar">
-		<div class="main-bar-box">
-			<div class="back-history">
-				<i class="fa fa-angle-left"></i>
+<div class="hp-container">
+	<div class="title-row">
+		<div class="back-history">
+			<i class="fa fa-angle-left"></i>
+		</div>
+		<div class="pension-title">
+			펜션이름
+		</div>
+		<div class="like-share">
+			<i class="fa fa-share-alt"></i>
+		</div>
+	</div>
+	<div class="pension-img-box">
+
+	</div>
+	<div class="room-info-list">
+		<div class="category-menu">
+			<ul class="room-category">
+				<li class="category01"> <span class="size-of-room"></span><p class="suffix">평</p><p>특수</p> </li>
+				<li class="category02"><img src="{{root}}/img/ico_room.png"><br>갯수</li>
+				<li class="category03"><img src="{{root}}/img/ico_toilet.png"><br>갯수</li>
+				<li class="category04"><img src="{{root}}/img/ico_barbecue.png"><br>개별바베큐</li>
+			</ul>
+		</div>
+		<div class="date-of-into-room-and-fee">
+			<p class="title-date-of-into-room-and-fee">입실일 & 객실요금</p>
+			<div class="day">
+				<div class="day-title">입실일</div>
+				<div class="day-info">입실 날짜
+				</div>
 			</div>
-			<div class="bar-title">펜션명</div>
-			<div class="like-share">
-				<i class="fa fa-heart-o"></i>
-				<i class="fa fa-share-alt"></i>
+			<div class="fee">
+				<div class="fee-title">객실 요금</div>
+				<div class="fee-info">요금
+
+				</div>
+			</div>
+			<div class="people-of-room" >
+				<div class="people-title">인원</div>
+				<div class="people-info">평수 대비 적당 인원
+				</div>
+			</div>
+			<div class="extra-fee-info">
+				<p class="condition">조건</p>
+				<p class="extra-money">가격</p>
 			</div>
 		</div>
-	</header>
-	<div class="hbps-content">
-		<section class="pension-img-box">
-			<img src= "{{root}}/img/img_pension_menu.jpg">
-		</section>
-		<section>
-			<div class="category-menu">
-				<ul class="room-category">
-					<li class="category01"> <span class="size-of-room"></span><p class="suffix">평</p><p>특수</p> </li>
-					<li class="category02"><img src="{{root}}/img/ico_room.png"><br>갯수</li>
-					<li class="category03"><img src="{{root}}/img/ico_toilet.png"><br>갯수</li>
-					<li class="category04"><img src="{{root}}/img/ico_barbecue.png"><br>개별바베큐</li>
-				</ul>
+		<div class="room-certain-info">
+			<div class="certain-title">
+				<h2>객실 상세정보</h2>
 			</div>
-		</section>
-		<section>
-			<div class="date-of-into-room-and-fee">
-				<p class="title-date-of-into-room-and-fee">입실일 & 객실요금</p>
-				<div class="day">
-					<div class="day-title">입실일</div>
-					<div class="day-info">입실 날짜
-					</div>
-				</div>
-				<div class="fee">
-					<div class="fee-title">객실 요금</div>
-					<div class="fee-info">요금
-
-					</div>
-				</div>
-				<div class="people-of-room" >
-					<div class="people-title">인원</div>
-					<div class="people-info">평수 대비 적당 인원
-					</div>
-				</div>
-				<div class="extra-fee-info">
-					<p class="condition">조건</p>
-					<p class="extra-money">가격</p>
-				</div>
+			<ul class="room-structure">
+				<li><strong><객실구조></객실구조></strong><br>-원룸(침대룸 1개 + 화장실1개)</li>
+			</ul>
+		</div>
+		<div class="money-table">
+			<div class="certain-title">
+				<h2>기준 요금</h2>
 			</div>
-			<div class="room-certain-info">
-				<div class="certain-title">
-					<h2>객실 상세정보</h2>
-				</div>
-				<ul class="room-structure">
-					<li><strong><객실구조></객실구조></strong><br>-원룸(침대룸 1개 + 화장실1개)</li>
-				</ul>
-			</div>
-			<div class="money-table">
-				<div class="certain-title">
-					<h2>기준 요금</h2>
-				</div>
-				<table class="table-of-money" style="width: 100%; text-align: center; font-size: 1.6em">
-					<colgroup>
-						<col width="25%">
-						<col width="25%">
-						<col width="25%">
-						<col width="25%">
-					</colgroup>
-					<thead>
+			<table class="table-of-money" style="width: 100%; text-align: center; font-size: 1.6em">
+				<colgroup>
+					<col width="25%">
+					<col width="25%">
+					<col width="25%">
+					<col width="25%">
+				</colgroup>
+				<thead>
 					<tr>
 						<td>기간</td>
 						<td>주중</td>
 						<td>금요일</td>
 						<td>주말</td>
 					</tr>
-					</thead>
-					<tbody>
+				</thead>
+				<tbody>
 					<tr>
 						<td class="first">비수기</td>
 						<td>가격</td>
@@ -90,32 +87,41 @@
 						<td>가격</td>
 						<td>가격</td>
 					</tr>
-					</tbody>
-				</table>
-				<div class="standard">
-					<div class="peak-season">
-						<h3>여름성수기</h3>
-						<div class="peak-date">
-							<h3>날짜1 ~ 날짜 2</h3>
-						</div>
+				</tbody>
+			</table>
+			<div class="standard">
+				<div class="peak-season">
+					<h3>여름성수기</h3>
+					<div class="peak-date">
+						<h3>날짜1 ~ 날짜 2</h3>
 					</div>
-					<div class="non-peak-season">
-						<h3>겨울성수기</h3>
-						<div class="non-peak-date">
-							<h3>날짜1 ~ 날짜 2</h3>
-						</div>
+				</div>
+				<div class="non-peak-season">
+					<h3>겨울성수기</h3>
+					<div class="non-peak-date">
+						<h3>날짜1 ~ 날짜 2</h3>
 					</div>
-					<div class="like-peak-season">
-						<h3>준성수기</h3>
-						<div class="like-peak-date">
-							<h3>날짜1 ~ 날짜 2</h3>
-						</div>
+				</div>
+				<div class="like-peak-season">
+					<h3>준성수기</h3>
+					<div class="like-peak-date">
+						<h3>날짜1 ~ 날짜 2</h3>
 					</div>
 				</div>
 			</div>
-		</section>
-		<div class="btn-wrap">
-			<input type="button" class="bottom-reservation" value="예약하기" style="background-color:#545555; color: white; width: 100%; height: 100px; position: fixed; bottom: 0; font-size: 1.6em">
+		</div>
+	</div>
+	<div class="btn-wrap">
+		<input type="button" class="bottom-reservation" value="예약하기" style="background-color:#545555; color: white; width: 100%; height: 75px; position: fixed; bottom: 50px; font-size: 1.5em">
+	</div>
+	<div class="info-reservation">
+		<h2 class="title-control">예약하기</h2>
+		<div class="input-customer-name">
+			<input type="text" placeholder="예약자 성명" class="write-name">
+		</div>
+		<div class="btn-control">
+			<input type="button" value="예약하기" class="reservation-ok">
+			<input type="button" value="취소" class="not-reservation">
 		</div>
 	</div>
 {{> footer jsName='main-room'}}

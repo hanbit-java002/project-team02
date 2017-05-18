@@ -10,4 +10,7 @@ require([
 	$(".pension-info-text").on("click", function() {
 		location.href = global.root + "/viewmore.html";
 	});
+	$(".room-info").on("click", function() {
+		location.href = global.root + "/main-room.html";
+	});
 });

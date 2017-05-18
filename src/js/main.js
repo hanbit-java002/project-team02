@@ -4,10 +4,6 @@ require([
 	$(".search_box").click(function() {
 		location.href = "pension-list.html";
 	});
-
-	$(".btn_reservation_list").click(function() {
-		location.href = "reservation_result.html";
-	});
 	var popupCssSelector = "";
 
 	function closeLayerPopup() {
@@ -22,10 +18,9 @@ require([
 		if (popupCssSelector === cssSelector) {
 			return;
 		}
-
 		popupCssSelector = cssSelector;
 
-		$("body").css("overflow", "hidden");
+		/* $(".region_select").css("overflow", "auto");*/
 
 		var blockLayerHTML = "<div class='block_page'></div>";
 		$("body").append(blockLayerHTML);
@@ -38,5 +33,28 @@ require([
 	}
 	$(".btn_region_search").on("click", function() {
 		openLayerPopup(".region_select");
+	});
+	$(".btn_reservation_list").on("click", function() {
+		openLayerPopup(".reservation_confirm");
+	});
+	$(".sido-control>li").on("click", function() {
+		$(".sido-control>li").removeClass("active");
+		$(".sido-control>li>.gg-control").hide();
+
+		$(this).addClass("active");
+		$(this).find(".gg-control").show();
+	});
+
+	$(".gg-control>li").on("click", function(event) {
+		event.stopPropagation();
+
+		var sido = $(this).parents(".sd").attr("value");
+		var gugun = $(this).text();
+
+		var sidogugun = sido + " - " + gugun;
+
+		$(".btn_region_search>span").text(sidogugun);
+
+		closeLayerPopup();
 	});
 });

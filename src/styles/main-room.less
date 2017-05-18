@@ -1,33 +1,44 @@
 @import 'lib/include.all.less';
 @import 'common.less';
 
+.hp-container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.title-row{
+	width: 100%;
+	position: fixed;
+	background-color: white;
+	height: 50px;
+	z-index: 3;
+}
+.back-history{
+	width: 13%;
+}
+.pension-title{
+	white-space: nowrap;
+	width: 70%;
+	font-size: 18px;
+	text-overflow: ellipsis;
+}
 .like-share{
-	position: absolute;
-	top: 24px;
-	right: 27px;
+	width: 16.9%;
 }
-
-.like-share>i {
+.title-row>div{
 	display: inline-block;
-	font-size: 20px;
-	margin-right: 15px;
+	padding: 15px 0;
+	text-align: center;
 }
-
-.hbps-content {
-	background-color: #e3e3e3;
-	border-bottom: 1px solid #999;
-}
-
 .pension-img-box{
 	width: 100%;
-}
-
-.pension-img-box>img {
-	width: 100%;
-	height: 25%;
-	@background-img-cover();
-	background-position-x: 50%;
-	background-position-y: 50%;
+	position: relative;
+	background-image: url("../img/pension-img.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+	height: 400px;
 }
 
 .room-info-list{
@@ -217,5 +228,13 @@ tbody>tr>td{
 	margin-bottom: 100px;
 }
 .btn-wrap{
-	position: relative;
+}
+.info-reservation{
+	display: none;
+	position: absolute;
+	top: 200px;
+	left: 50px;
+	right: 50px;
+	background-color: #fff;
+	z-index: 1;
 }

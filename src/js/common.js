@@ -63,7 +63,7 @@ define([
 			$(".reviews").addClass("active");
 		});
 	}
-	$(".room-list").on("click", function() {
+	$(".room-detail-info").on("click", function() {
 		location.href = global.root + "/main-room.html";
 	});
 	$(".footer-nav-box>ul>li:first-child").on("click", function() {
@@ -79,10 +79,7 @@ define([
 		location.href = global.root + "/reservation_result.html";
 	});
 	$(".search-btn").on("click", function() {
-		location.href = global.root + "/pension-list.html";
-	});
-	$(".pension-name-box").on("click", function() {
-		location.href = global.root + "/pension-menu.html";
+		location.href = global.root + "/pension_list.html";
 	});
 	switchmenu();
 });
