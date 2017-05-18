@@ -1,6 +1,21 @@
 define([
 	"bootstrap",
 ], function() {
+	$(".dropdown-content li a").on("click", function() {
+		$(".avaliable:first-child").text($(this).text());
+		$(".avaliable:first-child").val($(this).text());
+	});
+
+	$(".dropdown-content2 li a").on("click", function() {
+		$(".pension-theme").text($(this).text());
+		$(".pension-theme").text($(this).text());
+	});
+
+	/* $(".gg").on("click", function() {
+		$(".btn_region_search").text($(this).text());
+		$(".btn_region_search").text($(this).text());
+	});*/
+
 	function switchmenu() {
 		$(".room-menu").show();
 		$(".pension-menu").hide();

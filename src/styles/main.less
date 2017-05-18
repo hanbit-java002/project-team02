@@ -3,7 +3,6 @@
 
 .hbps-container {
 	width: 100%;
-	height: 100%;
 	background-image: url(../img/img_main.jpg);
 }
 
@@ -56,18 +55,33 @@
 .region_select{
 	display: none;
 	position: absolute;
-	top: 10px;
+	top: -180px;
+	height: 500px;
 	right: 10px;
 	background-color: #fff;
 	z-index: 1;
 	width: 100%;
 }
 .title_region{
-	background-color: blue;
+	background-color: skyblue;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin: 0 auto;
 	width: 100%;
+}
+.sido-control{
+	width: 100%;
+	position: relative;
+}
+.sd{
+	width: 30%;
+	border-bottom: solid 1px black;
+	border-right: solid 1px black;
+	line-height: 3;
+	margin: 0;
+}
+.sido-control>li.active{
+	border-right: none;
 }
 .title-control{
 	margin-top: 0;
@@ -82,10 +96,19 @@
 	background-color: #000;
 	opacity: 0.5;
 }
+.gg-control{
+	display: none;
+	width: 69%;
+	height: 100%;
+	position: absolute;
+	margin-left: 31%;
+	text-align: left;
+	top: 0;
+	overflow-y: scroll;
+}
 .fa-search {
 	margin-left: 10px;
 }
-
 .reservation_box {
 	position: relative;
 	margin: 10px 20px 0px 20px;
@@ -94,6 +117,15 @@
 .reservation_date {
 	width: 100%;
 	display: inline-block;
+}
+.reservation_confirm{
+	display: none;
+	position: absolute;
+	top: 200px;
+	left: 50px;
+	right: 50px;
+	background-color: #fff;
+	z-index: 1;
 }
 
 .chk_in {
@@ -115,17 +147,29 @@
 }
 
 .btn_chk_in {
-	font-size: 1.2em;
+	float: right;
+	/*font-size: 1.2em;*/
 	padding: 0px 0px 0px 10px;
+	width: 130px;
+	height: 35px;
+	border: 1px solid #777777;
 }
 
 .btn_chk_out {
-	font-size: 1.2em;
+	float: right;
+	width: 130px;
+	height: 35px;
+	/*font-size: 1.2em;*/
+	border: 1px solid #777777;
 	padding: 0px 0px 0px 10px;
 }
 
 .fa-calendar {
-	padding-left: 10px;
+	position: absolute;
+	float: left;
+	padding-top: 5px;
+	padding-left: 3px;
+	font-size: 20px;
 }
 
 .fa-user-o {
@@ -176,4 +220,150 @@ footer{
 }
 nav{
 	display: none;
+}
+
+@media(max-width: 700px){
+	.hbps-content>div{
+		width: 100%;
+		height: 100%;
+	}
+
+	.main-select-box01{
+		align-items: center;
+		float: right;
+		padding-left: 0;
+		padding-right: 0;
+		width: 130px;
+		height: 35px;
+		border: 1px solid #777777;
+		background-color: #ffffff;
+		align-content: center;
+	}
+
+	.main-select-box02{
+		float: right;
+		padding-left: 0;
+		padding-right: 0;
+		width: 130px;
+		height: 35px;
+		border: 1px solid #777777;
+		background-color: #ffffff;
+		align-content: center;
+		align-items: center;
+	}
+
+	.main-select-box03{
+		float: left;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+		height: 100%;
+		border: 1px solid #777777;
+		background-color: #ffffff;
+		align-content: center;
+	}
+
+	.main-select-box04{
+		float: right;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+		height: 100%;
+		border: 1px solid #777777;
+		background-color: #ffffff;
+		text-align: left;
+	}
+
+	.main-select-box03>i.fa-user-o{
+		margin: 3px 5px 5px 5px;
+		position: relative;
+		float: left;
+		font-size: 25px;
+		color: #000;
+
+	}
+
+	.main-select-box04>i.fa-home{
+		margin: 3px 5px 5px 5px;
+		position: relative;
+		float: left;
+		font-size: 25px;
+		color: #000;
+
+	}
+
+	/* Links inside the dropdown */
+	.dropdown-content2 a {
+		color: black;
+		padding: 5px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown-content>ul>li:hover{
+		background-color: #999999;
+	}
+
+	/*------------------*/
+
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		width: 150px;
+		height: auto;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+
+	/* Links inside the dropdown */
+	.dropdown-content a {
+		color: black;
+		padding: 5px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown-content>ul>li:hover{
+		background-color: #999999;
+	}
+
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content2 {
+		display: none;
+		position: absolute;
+		margin-left: 165px;
+		background-color: #f9f9f9;
+		width: 150px;
+		height: auto;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+
+	/* Links inside the dropdown */
+	.dropdown-content2 a {
+		color: black;
+		padding: 5px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown-content>ul>li:hover{
+		background-color: #999999;
+	}
+
+	#placeholder{
+		margin-left: 15px;
+		padding: 0 25px 0 25px;
+		padding-top: 5px;
+	}
+
+	.pension-theme{
+		margin-left: 20px;
+		padding: 0 0px 0 5px;
+		padding-top: 5px;
+	}
+
+
 }
