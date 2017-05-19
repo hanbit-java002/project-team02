@@ -38,7 +38,7 @@ require([
 		openLayerPopup(".reservation_confirm");
 	});
 	$(".reservation-confirm-btn").on("click", function() {
-		location.href = global.root + "reservation_result.html";
+		location.href = global.root + "/reservation_result.html";
 	});
 	$(".sido-control>li").on("click", function() {
 		$(".sido-control>li").removeClass("active");
