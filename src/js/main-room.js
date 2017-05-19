@@ -39,9 +39,12 @@ require([
 		$(".write-name").val("");
 	}
 	$(".reservation-ok").on("click", function() {
-		var customername = $(".write-name").val().trim();
+		var roomid = $(".room-id").val();
+		var date = $(".reservation_date").val();
+		var num = $(".reservation_num").val();
+		var customername = $(".write-name").val();
 
-		if(customername === "") {
+		if(customername === "" || customername === undefined) {
 			alert("이름을 입력해 주세요");
 			clearname();
 			$(".write-name").focus;
@@ -52,6 +55,9 @@ require([
 			method: "POST",
 			data: {
 				customername: customername,
+				roomid: roomid,
+				date: date,
+				num: num,
 			},
 			success: function(data) {
 				if (data.result === "ok") {
