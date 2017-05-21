@@ -3,6 +3,26 @@
 
 .search-filter {
 	width: 100%;
+	position: relative;
+	background-color: white;
+}
+.main-bar-list {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: white;
+}
+.main-bar-box-list {
+	position: relative;
+	padding-top: 20px;
+	border-bottom: 1px solid #888;
+}
+.list-title{
+	height: 30px;
+	width: 100%;
+	border-bottom: 1px solid #888;
 }
 
 .search-filter>ul>li>i {
@@ -17,7 +37,7 @@
 	display: inline-block;
 	width: 50%;
 	text-align: center;
-	padding: 20px 0px;
+	padding: 10px 0px;
 	font-size: 20px;
 	border-right: 1px solid #888;
 }
@@ -25,8 +45,6 @@
 .search-filter>ul>li:last-child {
 	border-right: none;
 }
-
-
 .search-filter>ul>li>div {
 	display: inline-block;
 }
@@ -38,6 +56,9 @@
 
 .pension-list {
 	width: 100%;
+	padding-top: 10px;
+	margin-top: 100px;
+	background-color: #e3e3e3;
 }
 
 .pension-list>ul>li {
@@ -46,10 +67,11 @@
 	margin-bottom: 10px;
 	border-top: 1px solid #888;
 	border-bottom: 1px solid #888;
+	background-color: white;
 }
 
 .pension-list>ul>li:last-child {
-	margin-bottom: 2px;
+	margin-bottom: 28px;
 }
 
 .pension-list>ul>li>div {
