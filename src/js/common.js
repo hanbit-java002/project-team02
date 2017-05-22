@@ -11,10 +11,39 @@ define([
 		$(".pension-theme").text($(this).text());
 	});
 
-	/* $(".gg").on("click", function() {
-		$(".btn_region_search").text($(this).text());
-		$(".btn_region_search").text($(this).text());
-	});*/
+	$(".search_box").on("click", function() {
+		var pensionSearch = $(".write-name").val().trim();
+
+		if(pensionSearch === "") {
+			alert("정보를 빠짐없이 입력해주세요");
+			clearname();
+			$(".write-name").focus;
+			return;
+		}
+		$.ajax({
+			url: global.root + "/api/pensionSerch",
+			method: "POST",
+			data: {
+				name: pensionName,
+			},
+			success: function(data) {
+				if (data.result === "ok") {
+					alert("펜션 검색이 완료됐습니다.");
+				}
+				else {
+					alert("검색에 실패하였습니다.");
+				}
+			},
+			error: function(jqXHR) {
+				if (jqXHR.status === 1500) {
+					alert(JSON.parse(jqXHR.responseText).errorMsg);
+				}
+				else {
+					alert(jqXHR.responseJSON.message);
+				}
+			},
+		});
+	});
 
 	function switchmenu() {
 		$(".room-menu").show();
@@ -79,7 +108,7 @@ define([
 		location.href = global.root + "/reservation_result.html";
 	});
 	$(".search-btn").on("click", function() {
-		location.href = global.root + "/pension_list.html";
+		location.href = global.root + "/pension-list.html";
 	});
 	switchmenu();
 });
