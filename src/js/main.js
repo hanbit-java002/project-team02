@@ -1,9 +1,6 @@
 require([
 	"common",
 ], function() {
-	$(".search_box").click(function() {
-		location.href = "pension-list.html";
-	});
 	var popupCssSelector = "";
 
 	function closeLayerPopup() {
@@ -48,16 +45,35 @@ require([
 		$(this).find(".gg-control").show();
 	});
 
+	var sido = "";
+	var gugun = "";
+
 	$(".gg-control>li").on("click", function(event) {
 		event.stopPropagation();
 
-		var sido = $(this).parents(".sd").attr("value");
-		var gugun = $(this).text();
+		sido = $(this).parents(".sd").attr("value");
+		gugun = $(this).text();
 
 		var sidogugun = sido + " - " + gugun;
 
-		$(".btn_region_search>span").text(sidogugun);
-
+		$(".btn_region_search").val(sidogugun);
 		closeLayerPopup();
 	});
+
+	function search() {
+		$(".search_box").on("click", function() {
+			var sidogugun = $(".btn_region_search").val().trim();
+
+			if(sidogugun === "지역을 선택해주세요") {
+				alert("지역을 선택하시오");
+				return;
+			}
+			sido = encodeURIComponent(sido);
+			gugun = encodeURIComponent(gugun);
+
+			location.href = global.root + "/pension-list.html?sido="
+				+ sido + gugun;
+		});
+	}
+	search();
 });
