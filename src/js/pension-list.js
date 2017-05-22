@@ -4,11 +4,7 @@ require([
 	$(".fa-angle-left").click(function() {
 		location.href = global.root + "/index.html";
 	});
-
-	$(".pension-img-box").on("click", function() {
-		location.href = global.root + "/pension-menu.html";
-	});
-	function appendSearch() {
+	function appendSearch(search) {
 		var searchHTML = "";
 
 		searchHTML += "<li>";
@@ -23,20 +19,23 @@ require([
 		searchHTML += "</li>";
 
 		$(".pension-list>ul").append(searchHTML);
+		$(".pension-list>ul>li").on("click", function() {
+			location.href = global.root + "/pension-menu.html";
+		});
 	}
 
 	function searchresult() {
 		var urlSearchParams = new window.URLSearchParams(location.search);
-		var sido = urlSearchParams.get("sido");
 		var gugun = urlSearchParams.get("gugun");
+		var gugunid = urlSearchParams.get("gugunid");
 
-		$(".bar-title").text(sido + "-" + gugun);
+		$(".bar-title").text(gugun);
 
 		$.ajax({
 			url: global.root + "/api/search",
 			method: "POST",
 			data: {
-				gugun: gugun,
+				gugunid: gugunid,
 			},
 			success: function(list) {
 				var list = list.list;

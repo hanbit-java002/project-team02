@@ -47,12 +47,14 @@ require([
 
 	var sido = "";
 	var gugun = "";
+	var gugunid= "";
 
 	$(".gg-control>li").on("click", function(event) {
 		event.stopPropagation();
 
 		sido = $(this).parents(".sd").attr("value");
 		gugun = $(this).text();
+		gugunid = $(this).attr("id");
 
 		var sidogugun = sido + " - " + gugun;
 
@@ -68,11 +70,10 @@ require([
 				alert("지역을 선택하시오");
 				return;
 			}
-			sido = encodeURIComponent(sido);
 			gugun = encodeURIComponent(gugun);
-
-			location.href = global.root + "/pension-list.html?sido="
-				+ sido + gugun;
+			gugunid = encodeURIComponent(gugunid);
+			location.href = global.root + "/pension-list.html?gugunid="
+				+ gugunid + "&gugun=" + gugun;
 		});
 	}
 	search();
