@@ -7,7 +7,7 @@ require([
 	function appendSearch(search) {
 		var searchHTML = "";
 
-		searchHTML += "<li>";
+		searchHTML += "<li pid='" + search.pension_id + "'>";
 		searchHTML += "<div class='pension-img-box'>";
 		searchHTML += "<img src='http://image.wooripension.com/pension_images/w0707029/201611993356.jpg'>";
 		searchHTML += "</div>";
@@ -18,9 +18,17 @@ require([
 		searchHTML += "</div>";
 		searchHTML += "</li>";
 
+
+		var pensionname = search.pension_name;
+		var pensionid = search.pension_id;
+
 		$(".pension-list>ul").append(searchHTML);
 		$(".pension-list>ul>li").on("click", function() {
-			location.href = global.root + "/pension-menu.html";
+			pensionname = encodeURIComponent(pensionname);
+			pensionid = $(this).attr("pid");
+
+			location.href = global.root + "/pension-menu.html?pensionname="
+				+ pensionname + "&pensionid=" + pensionid;
 		});
 	}
 

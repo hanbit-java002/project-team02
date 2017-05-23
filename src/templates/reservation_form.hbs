@@ -5,7 +5,7 @@
 		<div class="back-history">
 			<i class="fa fa-angle-left"></i>
 		</div>
-		<div class="bar-title">예약결과</div>
+		<div class="bar-title">예약</div>
 	</div>
 </header>
 <div class="reservation_info_box">
@@ -13,16 +13,17 @@
 		<div class="reservation_1">1.예약정보</div>
 	</div>
 	<div class="reser_pension_box">
-		<div class="reser_pension">펜션명</div>
-		<div class="reser_pension_name">제주쉼127키즈펜션</div>
+		<div class="reser_pension">펜션 이름</div>
+		<div class="reser_pension_name"></div>
 	</div>
 	<div class="reser_room_box">
-		<div class="reser_room">객실명</div>
-		<div class="reser_room_name">제라늄(독채)</div>
+		<div class="reser_room">방이름</div>
+		<div class="reser_room_name"></div>
 	</div>
 	<div class="reser_chk_in_box">
 		<div class="reser_chk_in">입실일</div>
-		<div class="reser_chk_in_date">2017.4.18(화)1박</div>
+		<div class="reser_chk_in_date">
+			<input type="text" class="reser_chk_in_date1" value="2017.4.18(화)1박"></div>
 		<div class="reser_chk_in_modify">변경</div>
 	</div>
 	<div class="reser_person_box">
@@ -67,11 +68,14 @@
 	</div>
 	<div class="subscriber_box">
 		<div class="subscriber">예약자</div>
-		<div class="subscriber_name">예약자 이름</div>
+		<div class="subscriber_name">
+			<input type="text" placeholder="예약자 성명" class="reservation-name">
+		</div>
 	</div>
 	<div class="phone_number_box">
 		<div class="phone_number">연락처</div>
-		<div class="phone_number_input">휴대폰 번호(숫자만입력)</div>
+		<div class="phone_number_input">
+			<input type="text" placeholder="휴대폰 번호(숫자만입력)" class="reservation-num"></div>
 	</div>
 	<div class="email_box">
 		<div class="email">이메일</div>
@@ -92,8 +96,7 @@
 	</div>
 	<div class="room_price_box">
 		<div class="room_price">객실금액</div>
-		<div class="room_price_info">79,000</div>
-		<div class="won">원</div>
+		<div class="room_price_info"></div>
 	</div>
 	<div class="person_add_box">
 		<div class="person_add">인원추가</div>
@@ -101,14 +104,13 @@
 	</div>
 	<div class="total_pay_box">
 		<div class="total_pay">총 결제금액</div>
-		<div class="total_pay_price">79,000</div>
-		<div class="won">원</div>
+		<div class="total_pay_price"></div>
 	</div>
 </div>
 <div class="clause_assent_box">
 	<div class="clause_assent">
 		<div class="reservation_4">4.약관동의</div>
-		<input type="checkbox" name="chk_all_agree" value="전체동의">
+		<input type="checkbox" name="chk_all_agree" class="check-all" value="전체동의">
 		<div class="all_agree_text">전체동의</div>
 	</div>
 	<div class="cancel_fee_msg">
@@ -116,22 +118,22 @@
 		예약취소시 취소수수료가 발생합니다.
 	</div>
 	<div class="cancel_agree">
-		<input type="checkbox" name="chk_cancel_agree" value="취소수수료 확인 및 동의">
+		<input type="checkbox" name="chk_cancel_agree" class="check" value="취소수수료 확인 및 동의">
 		<div class="cancel_agree_text">취소수수료 확인 및 동의</div>
 		<div class="cancel_stipulation_view">약관보기</div>
 	</div>
 	<div class="stipulation_agree">
-		<input type="checkbox" name="chk_stipulation_agree" value="이용약관 동의">
+		<input type="checkbox" name="chk_stipulation_agree" class="check" value="이용약관 동의">
 		<div class="stipulation_agree_text">이용약관 동의</div>
 		<div class="stipulation_view">약관보기</div>
 	</div>
 	<div class="supply_agree">
-		<input type="checkbox" name="chk_supply_agree" value="제3자 정보제공 동의">
+		<input type="checkbox" name="chk_supply_agree" class="check" value="제3자 정보제공 동의">
 		<div class="supply_agree_text">제3자 정보제공 동의</div>
 		<div class="supply_stipulation_view">약관보기</div>
 	</div>
 	<div class="nominor_agree">
-		<input type="checkbox" name="chk_nominor_agree" value="미성년자가 아님에 동의">
+		<input type="checkbox" name="chk_nominor_agree" class="check" value="미성년자가 아님에 동의">
 		<div class="nominor_agree_text">미성년자가 아님에 동의</div>
 	</div>
 </div>
