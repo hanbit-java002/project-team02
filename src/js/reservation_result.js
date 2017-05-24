@@ -5,11 +5,12 @@ require([
 		location.href = "index.html";
 	});
 	var pensionname = "";
+	var roomname = "";
 	function resultform() {
 		var urlSearchParams = new window.URLSearchParams(location.search);
 		var reservationname = urlSearchParams.get("reservationname");
 		pensionname = urlSearchParams.get("pensionname");
-
+		roomname = urlSearchParams.get("roomname");
 		$.ajax({
 			url: global.root + "/api/reservefind",
 			method: "POST",
@@ -38,6 +39,8 @@ require([
 		$(".reser_pension_namebox").text(reservefind.reservation_name);
 
 		$(".reser_pension_name").text(pensionname);
+
+		$(".reser_room_name").text(roomname);
 	}
 	resultform();
 });

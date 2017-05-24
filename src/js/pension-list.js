@@ -7,7 +7,8 @@ require([
 	function appendSearch(search) {
 		var searchHTML = "";
 
-		searchHTML += "<li pid='" + search.pension_id + "'>";
+		searchHTML += "<li pid='" + search.pension_id + "' penid='"
+			+ search.pension_name + "'>";
 		searchHTML += "<div class='pension-img-box'>";
 		searchHTML += "<img src='http://image.wooripension.com/pension_images/w0707029/201611993356.jpg'>";
 		searchHTML += "</div>";
@@ -18,18 +19,7 @@ require([
 		searchHTML += "</div>";
 		searchHTML += "</li>";
 
-
-		var pensionname = search.pension_name;
-		var pensionid = search.pension_id;
-
 		$(".pension-list>ul").append(searchHTML);
-		$(".pension-list>ul>li").on("click", function() {
-			pensionname = encodeURIComponent(pensionname);
-			pensionid = $(this).attr("pid");
-
-			location.href = global.root + "/pension-menu.html?pensionname="
-				+ pensionname + "&pensionid=" + pensionid;
-		});
 	}
 
 	function searchresult() {
@@ -52,6 +42,14 @@ require([
 
 					appendSearch(search);
 				}
+
+				$(".pension-list>ul>li").on("click", function() {
+					var pensionname = $(this).attr("penid");
+					var pensionid = $(this).attr("pid");
+
+					location.href = global.root + "/pension-menu.html?" +
+						"pensionid=" + pensionid + "&pensionname=" + pensionname;
+				});
 			},
 			error: function(jqXHR) {
 				if (jqXHR.status === 1500) {

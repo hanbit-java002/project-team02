@@ -9,19 +9,48 @@ require([
 			$("#modal-wrapper").hide();
 		},
 	};
-	function result() {
+	var roomid = "";
+	var pensionname = "";
+	var roomname = "";
+		function result() {
 		var urlSearchParams = new window.URLSearchParams(location.search);
-		var roomname = urlSearchParams.get("roomname");
-		var pensionname = urlSearchParams.get("pensionname");
-		var roomprice = urlSearchParams.get("roomprice");
-		var	roomid = urlSearchParams.get("roomid");
+		pensionname = urlSearchParams.get("pensionname");
+		roomname = urlSearchParams.get("roomname");
 
+		$.ajax({
+			url: global.root + "/api/roominfo",
+			method: "POST",
+			data: {
+				roomname: roomname,
+			},
+			success: function(list) {
+				var list = list.list;
+				for (var i=0; i<list.length; i++) {
+					var resultinfo = list[i];
+
+					goresult(resultinfo);
+				}
+			},
+			error: function(jqXHR) {
+				if (jqXHR.status === 1500) {
+					alert(JSON.parse(jqXHR.responseText).errorMsg);
+				}
+				else {
+					alert(jqXHR.responseJSON.message);
+				}
+			},
+		});
 		$(".reser_pension_name").text(pensionname);
 		$(".reser_room_name").text(roomname);
+	}
+	function goresult(resultinfo) {
+		var roomprice = "";
+		roomprice += resultinfo.room_price;
+		roomprice += "원";
 		$(".room_price_info").text(roomprice);
 		$(".total_pay_price").text(roomprice);
-
 		$(".btn_pay_box").click(function() {
+			roomid = resultinfo.room_id;
 			var reservationname = $(".reservation-name").val();
 			var reservationnum = $(".reservation-num").val();
 			var reservationdate = $(".reser_chk_in_date1").val();
@@ -47,10 +76,10 @@ require([
 				},
 				success: function(data) {
 					if (data.result === "ok") {
-						alert("포스팅 되었습니다.");
+						alert("예약 되었습니다.");
 					}
 					else {
-						alert("데이터가 제대로 가지 않았습니다.");
+						alert("예약에 실패하였습니다.");
 					}
 				},
 				error: function(jqXHR) {
@@ -64,9 +93,9 @@ require([
 			});
 
 			reservationname = encodeURIComponent(reservationname);
-			pensionname = encodeURIComponent(pensionname);
-			/* location.href = "reservation_result.html?reservationname="
-				+ reservationname + "&pensionname=" + pensionname;*/
+			location.href = global.root + "/reservation_result.html?reservationname="
+				+ reservationname + "&pensionname=" + pensionname
+				+ "&roomname=" + roomname;
 		});
 	}
 

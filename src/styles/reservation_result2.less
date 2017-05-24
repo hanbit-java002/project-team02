@@ -3,40 +3,49 @@
 
 .reservation_menu_title {
 	width: 100%;
-	height: 65px;
 }
 
+.go-home{
+	position: absolute;
+	left: 20px;
+	font-size: 30px;
+}
 .reservation_box {
-	margin: 5% 0px 0px 12%;
-	width: 58%;
-	text-align: center;
+	margin: 6% auto;
+	width: 60%;
 }
 
 .reservation {
-	width: 30%;
-	font-size: 1.5em;
+	width: 40%;
+	@margin-auto-width();
+	text-align: center;
+	font-size: 19px;
 	font-weight: bold;
 }
 
 .reservation_info_box {
 	border: 10px solid #ffff00;
+	margin-bottom: 15PX;
 }
 
 .reservation_1 {
-	padding: 35px 0px 20px 15px;
+	padding: 20px 0px 20px 15px;
 	font-size: 1.5em;
 	font-weight: bold;
 	border-bottom: 1px solid #ffff00;
-	margin-top: 25px;
 }
 
-.reser_pension_box {
+.reser_pension_box1, .reser_pension_box2,
+.reser_room_box,
+.reser_person_box,
+.reser_addr_box, .reser_tel_box{
 	width: 100%;
 	height: 50px;
 	margin: 10px 0px 0px 15px;
 }
 
-.reser_pension {
+.reser_person_name , .reser_pension, .reser_room,
+.reser-person, .reser-addr, .reser-tel{
 	float: left;
 	width: 26%;
 	padding: 8px 0px;
@@ -46,8 +55,9 @@
 	background-color: #9d9d9d;
 	border: 0px solid;
 }
-
-.reser_pension_name {
+.reser_pension_namebox, .reser_pension_name,
+.reser_room_name, .reser-person-num,
+.reser-addr_detail, .reser-tel-num{
 	width: 63%;
 	float: left;
 	padding-top: 5px;
@@ -55,7 +65,14 @@
 	font-size: 1.1em;
 	border-bottom: 1px solid #ffff00;
 }
-
+.reser-pension-num{
+	width: 63%;
+	float: left;
+	padding-top: 5px;
+	margin: 0px 20px 0px 15px;
+	font-size: 1.1em;
+	border-bottom: 1px solid #ffff00;
+}
 .reser_room_box {
 	float: none;
 	width: 100%;
@@ -126,7 +143,6 @@
 .reser_person_box {
 	float: none;
 	width: 100%;
-	height: 180px;
 	margin: 10px 0px 0px 15px;
 }
 
@@ -239,9 +255,7 @@ button {
 	margin: 10px 0px 0px 15px;
 	border-bottom: 1px solid #ffff00;
 }
-.person_add, .person_add_price{
-	display: inline-block;
-}
+
 .room_price {
 	float: left;
 	font-size: 1.1em;
@@ -251,13 +265,11 @@ button {
 .room_price_info {
 	float: left;
 	margin-top: 8px;
-	margin-left: 155px;
+	margin-left: 180px;
 	font-size: 1.3em;
 	font-weight: bold;
 }
-.room_price_info, .room_price{
-	display: inline-block;
-}
+
 .won {
 	float: left;
 	margin-top: 8px;
@@ -275,13 +287,13 @@ button {
 .person_add_price {
 	float: left;
 	margin-top: 10px;
-	margin-left: 210px;
+	margin-left: 230px;
 	font-size: 1.1em;
 }
 
 .total_pay {
 	float: left;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	font-weight: bold;
 	margin-top: 7px;
 }
@@ -289,20 +301,18 @@ button {
 .total_pay_price {
 	float: left;
 	margin-top: 5px;
-	font-size: 1.4em;
+	margin-left: 120px;
+	font-size: 1.6em;
 	font-weight: bold;
 	color: #ff0000;
-	margin-left: 10px;
 }
 
-.total_pay_box{
+.total_pay_box .won {
 	margin-top: 5px;
 	font-size: 1.6em;
 	color: #ff0000;
 }
-.total_pay, .total_pay_price{
-	display: inline-block;
-}
+
 .clause_assent_box {
 	border: 10px solid #ffff00;
 	border-top: 0px;
@@ -318,6 +328,7 @@ button {
 	padding: 20px 0px 20px 15px;
 	font-size: 1.5em;
 	font-weight: bold;
+	float: left;
 }
 
 .clause_assent input[type=checkbox] {
@@ -382,7 +393,6 @@ button {
 	background-color: #5e5e5e;
 	color: white;
 	font-size: 1.5em;
-	margin-bottom: 20px;
 }
 
 .btn_pay {
@@ -471,7 +481,4 @@ p {
 	margin-left: 8%;
 	margin-right: 5%;
 	padding: 0;
-}
-.reservation-num , .reservation-name, .reser_chk_in_date1{
-	border: none;
 }

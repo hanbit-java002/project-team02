@@ -35,7 +35,13 @@ require([
 		openLayerPopup(".reservation_confirm");
 	});
 	$(".reservation-confirm-btn").on("click", function() {
-		location.href = global.root + "/reservation_result.html";
+		var reservationname = $(".name-write").val();
+		if (reservationname === undefined || reservationname === "") {
+			alert("예약자 성명을 입력하세요");
+			return;
+		}
+		location.href = global.root + "/reservation_result2.html?reservationname="
+			+ reservationname;
 	});
 	$(".sido-control>li").on("click", function() {
 		$(".sido-control>li").removeClass("active");

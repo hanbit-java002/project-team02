@@ -254,7 +254,7 @@ gulp.task("script", function (cb) {
 	pump([
 			gulp.src([dirs.src + "/js/**/*.js",
 				"!" + dirs.src + "/js/require.config.js"]),
-			uglify(),
+			// uglify(),
 			gulp.dest(dirs.dist + "/js")
 		],
 		cb

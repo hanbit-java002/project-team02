@@ -10,10 +10,12 @@ require([
 	$(".pension-info-text").on("click", function() {
 		location.href = global.root + "/viewmore.html";
 	});
+	var pensionname = "";
+	var pensionid = "";
 	function searchroom() {
 		var urlSearchParams = new window.URLSearchParams(location.search);
-		var pensionname = urlSearchParams.get("pensionname");
-		var pensionid = urlSearchParams.get("pensionid");
+		pensionid = urlSearchParams.get("pensionid");
+		pensionname = urlSearchParams.get("pensionname");
 
 		$(".bar-title").text(pensionname);
 
@@ -44,7 +46,8 @@ require([
 	function appendSearchroom(room) {
 		var roomHTML = "";
 
-		roomHTML += "<li>";
+		roomHTML += "<li rname='" + room.room_name + "'typeid='"
+			+ room.room_type + "'>";
 		roomHTML += "<div class='room-img'>";
 		roomHTML += "<img src='../img/room-img.jpg'>";
 		roomHTML += "</div>";
@@ -65,15 +68,18 @@ require([
 		roomHTML += "</div>";
 		roomHTML += "</li>";
 
+		var roomname = room.room_name;
+		var roomtype = room.room_type;
+
+		console.log(pensionname);
 		$(".room-list").append(roomHTML);
 
 		$(".room-list>li").on("click", function() {
-			var urlSearchParams = new window.URLSearchParams(location.search);
-			var roomname = room.room_name;
-			var pensionname = urlSearchParams.get("pensionname");
+			roomname = $(this).attr("rname");
+			roomtype = $(this).attr("typeid");
 
 			location.href = global.root + "/main-room.html?pensionname=" + pensionname
-				+ "&roomname=" + roomname;
+				+ "&roomname=" + roomname + "&roomtype=" + roomtype;
 		});
 	}
 	searchroom();

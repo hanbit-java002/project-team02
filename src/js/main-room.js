@@ -11,7 +11,6 @@ require([
 		var urlSearchParams = new window.URLSearchParams(location.search);
 		roomname = urlSearchParams.get("roomname");
 		pensionname = urlSearchParams.get("pensionname");
-		roomprice = urlSearchParams.get("roomprice");
 
 		$(".bar-title").text(roomname);
 
@@ -39,10 +38,8 @@ require([
 			},
 		});
 	}
-	var roomid = "";
 	function appendroominfo(roominfo) {
 		var roomtype = roominfo.room_type;
-		roomid = roominfo.room_id;
 		$(".size-of-room").append(roomtype);
 
 		roomprice = roominfo.room_price;
@@ -52,8 +49,7 @@ require([
 	}
 	$(".btn-wrap").on("click", function() {
 		location.href = global.root + "/reservation_form.html?pensionname=" +
-		pensionname + "&roomname=" + roomname + "&roomprice=" + roomprice
-		+ "&roomid=" + roomid;
+		pensionname + "&roomname=" + roomname;
 	});
 
 	title();
